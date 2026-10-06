@@ -22,11 +22,13 @@ jobs:
         run: python generate.py
         env:
           FEED_URL: ${{ secrets.FEED_URL }}
+          GOOGLE_FEED_URL: ${{ secrets.GOOGLE_FEED_URL }}
 
       - name: Uložit změny
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add mistni-inventar.tsv
-          git diff --cached --quiet || git commit -m "Aktualizace místního inventáře $(date -u +%Y-%m-%d)"
+          if [ -f oprava-nazvu.tsv ]; then git add oprava-nazvu.tsv; fi
+          git diff --cached --quiet || git commit -m "Denní aktualizace $(date -u +%Y-%m-%d)"
           git push
