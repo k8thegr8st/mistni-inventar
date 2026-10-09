@@ -1,0 +1,48 @@
+name: Obrázky produktů
+
+on:
+  schedule:
+    - cron: "37 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vytvořit seznam obrázků
+        env:
+          GOOGLE_FEED_URL: ${{ secrets.GOOGLE_FEED_URL }}
+        run: |
+          python3 - <<'EOF'
+          import os, urllib.request, xml.etree.ElementTree as ET
+          G = "{http://base.google.com/ns/1.0}"
+          req = urllib.request.Request(os.environ["GOOGLE_FEED_URL"], headers={"User-Agent": "hrana-merchant-bot"})
+          root = ET.fromstring(urllib.request.urlopen(req, timeout=180).read())
+          rows, seen = [], set()
+          for item in root.iter("item"):
+              pid = (item.findtext(G + "id") or "").strip()
+              img = (item.findtext(G + "image_link") or "").strip()
+              if pid and img and pid not in seen:
+                  seen.add(pid)
+                  rows.append((pid, img))
+          rows.sort()
+          with open("obrazky.tsv", "w", encoding="utf-8", newline="\n") as f:
+              f.write("id\timage\n")
+              for r in rows:
+                  f.write("\t".join(r) + "\n")
+          print(f"Obrázky: {len(rows)} produktů")
+          EOF
+
+      - name: Uložit změny
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add obrazky.tsv
+          git diff --cached --quiet || git commit -m "Obrázky produktů $(date -u +%Y-%m-%d)"
+          git push
