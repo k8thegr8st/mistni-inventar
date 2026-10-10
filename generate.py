@@ -60,6 +60,16 @@ def mistni_inventar():
     if not rows:
         raise SystemExit("Heureka feed neobsahuje žádné produkty – soubor nepřepisuji.")
 
+    # Produkty z Google feedu, které v Heureka feedu nejsou (vyprodané,
+    # předprodej), doplníme jako out_of_stock, aby jim nechyběla místní data.
+    if GOOGLE_FEED_URL:
+        groot = stahnout(GOOGLE_FEED_URL)
+        for item in groot.iter("item"):
+            pid = text(item, G + "id")
+            if pid and pid not in seen:
+                seen.add(pid)
+                rows.append((STORE_CODE, pid, "out_of_stock"))
+
     rows.sort(key=lambda r: r[1])
     zapsat_tsv(OUTPUT_INVENTAR, ["store_code", "id", "availability"], rows)
     skladem = sum(1 for r in rows if r[2] == "in_stock")
