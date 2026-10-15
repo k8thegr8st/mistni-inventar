@@ -216,7 +216,7 @@ HRANA01	1345	out_of_stock
 HRANA01	1346	in_stock
 HRANA01	1347	in_stock
 HRANA01	1348	out_of_stock
-HRANA01	1349	out_of_stock
+HRANA01	1349	in_stock
 HRANA01	135	in_stock
 HRANA01	1351	in_stock
 HRANA01	1352	in_stock
@@ -240,7 +240,7 @@ HRANA01	1376	in_stock
 HRANA01	1377	in_stock
 HRANA01	1378	in_stock
 HRANA01	1379	in_stock
-HRANA01	1380	in_stock
+HRANA01	1380	out_of_stock
 HRANA01	1388	in_stock
 HRANA01	1389	in_stock
 HRANA01	139	in_stock
@@ -308,7 +308,9 @@ HRANA01	1457	in_stock
 HRANA01	1458	in_stock
 HRANA01	1461	in_stock
 HRANA01	1462	out_of_stock
-HRANA01	1463	out_of_stock
+HRANA01	1463	in_stock
+HRANA01	1466	in_stock
+HRANA01	1467	in_stock
 HRANA01	1468	in_stock
 HRANA01	1469	out_of_stock
 HRANA01	1473	in_stock
@@ -448,6 +450,8 @@ HRANA01	1650	in_stock
 HRANA01	1651	in_stock
 HRANA01	1652	in_stock
 HRANA01	166	out_of_stock
+HRANA01	1668	in_stock
+HRANA01	1669	in_stock
 HRANA01	1670	in_stock
 HRANA01	1671_100	in_stock
 HRANA01	1671_101	in_stock
@@ -470,6 +474,12 @@ HRANA01	1676	out_of_stock
 HRANA01	1677	in_stock
 HRANA01	168	in_stock
 HRANA01	169	in_stock
+HRANA01	1710	in_stock
+HRANA01	1711	in_stock
+HRANA01	1712	in_stock
+HRANA01	1713	in_stock
+HRANA01	1714	in_stock
+HRANA01	1715	in_stock
 HRANA01	173	in_stock
 HRANA01	174	in_stock
 HRANA01	175	in_stock
@@ -533,7 +543,6 @@ HRANA01	350	in_stock
 HRANA01	355	in_stock
 HRANA01	358	in_stock
 HRANA01	359	in_stock
-HRANA01	362	out_of_stock
 HRANA01	375	out_of_stock
 HRANA01	376	in_stock
 HRANA01	381	in_stock
@@ -716,7 +725,10 @@ HRANA01	854	in_stock
 HRANA01	855	in_stock
 HRANA01	857	in_stock
 HRANA01	859	in_stock
+HRANA01	860	in_stock
+HRANA01	861	in_stock
 HRANA01	862	in_stock
+HRANA01	864	in_stock
 HRANA01	867	out_of_stock
 HRANA01	88	in_stock
 HRANA01	882	in_stock
