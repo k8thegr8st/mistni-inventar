@@ -299,7 +299,7 @@ HRANA01	1473	in_stock
 HRANA01	1482	in_stock
 HRANA01	1483	in_stock
 HRANA01	1484	in_stock
-HRANA01	1485	in_stock
+HRANA01	1485	out_of_stock
 HRANA01	149	in_stock
 HRANA01	1492	in_stock
 HRANA01	1493	in_stock
@@ -596,6 +596,7 @@ HRANA01	249	in_stock
 HRANA01	250	in_stock
 HRANA01	290	in_stock
 HRANA01	291	in_stock
+HRANA01	306	in_stock
 HRANA01	308	in_stock
 HRANA01	318	in_stock
 HRANA01	322	in_stock
@@ -710,6 +711,7 @@ HRANA01	675	in_stock
 HRANA01	676	in_stock
 HRANA01	678	in_stock
 HRANA01	679	in_stock
+HRANA01	68	in_stock
 HRANA01	680	out_of_stock
 HRANA01	681	in_stock
 HRANA01	682	in_stock
