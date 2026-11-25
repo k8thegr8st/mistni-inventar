@@ -871,8 +871,8 @@ HRANA01	983	in_stock
 HRANA01	986	in_stock
 HRANA01	987	in_stock
 HRANA01	988	in_stock
-HRANA01	99	in_stock
-HRANA01	990	in_stock
+HRANA01	99	out_of_stock
+HRANA01	990	out_of_stock
 HRANA01	991	out_of_stock
 HRANA01	994	in_stock
 HRANA01	996	in_stock
